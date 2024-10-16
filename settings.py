@@ -1,32 +1,28 @@
-# -*- coding: utf-8 -*-
-# @Time    : 18-3-23 下午12:22
-# @Author  : AaronJny
-# @Email   : Aaron__7@163.com
-
-
+# 内容特征层及loss加权系数
+CONTENT_LAYERS = {'block4_conv2': 0.5, 'block5_conv2': 0.5}
+# 风格特征层及loss加权系数
+STYLE_LAYERS = {'block1_conv1': 0.2, 'block2_conv1': 0.2, 'block3_conv1': 0.2, 'block4_conv1': 0.2,
+                'block5_conv1': 0.2}
 # 内容图片路径
-CONTENT_IMAGE = 'images/content.jpg'
+CONTENT_IMAGE_PATH = './images/content.jpg'
 # 风格图片路径
-STYLE_IMAGE = 'images/style.jpg'
-# 输出图片路径
-OUTPUT_IMAGE = 'output/output'
-# 预训练的vgg模型路径
-VGG_MODEL_PATH = 'imagenet-vgg-verydeep-19.mat'
+STYLE_IMAGE_PATH = './images/style.jpg'
+# 生成图片的保存目录
+OUTPUT_DIR = './output'
+
+# 内容loss总加权系数
+CONTENT_LOSS_FACTOR = 1
+# 风格loss总加权系数
+STYLE_LOSS_FACTOR = 100
+
 # 图片宽度
-IMAGE_WIDTH = 450
+WIDTH = 450
 # 图片高度
-IMAGE_HEIGHT = 300
-# 定义计算内容损失的vgg层名称及对应权重的列表
-CONTENT_LOSS_LAYERS = [('conv4_2', 0.5),('conv5_2',0.5)]
-# 定义计算风格损失的vgg层名称及对应权重的列表
-STYLE_LOSS_LAYERS = [('conv1_1', 0.2), ('conv2_1', 0.2), ('conv3_1', 0.2), ('conv4_1', 0.2), ('conv5_1', 0.2)]
-# 噪音比率
-NOISE = 0.5
-# 图片RGB均值
-IMAGE_MEAN_VALUE = [128.0, 128.0, 128.0]
-# 内容损失权重
-ALPHA = 1
-# 风格损失权重
-BETA = 500
-# 训练次数
-TRAIN_STEPS = 3000
+HEIGHT = 300
+
+# 训练epoch数
+EPOCHS = 20
+# 每个epoch训练多少次
+STEPS_PER_EPOCH = 100
+# 学习率
+LEARNING_RATE = 0.08

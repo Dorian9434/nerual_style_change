@@ -1,0 +1,4 @@
+tensorflow~=2.15.0
+numpy~=1.26.3
+tqdm~=4.66.1
+flask~=3.0.0
